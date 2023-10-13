@@ -1,0 +1,118 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="Project_PDB.Views.Modifying"
+             mc:Ignorable="d" Width="802" Height="399">
+    <Grid Background="White" Width="802" Height="394.8">
+        <dx:DXTabControl>
+            <dx:DXTabItem x:Name="CustTab" Header="Customers" Margin="0,0,-249,0" HorizontalContentAlignment="Center">
+                <Grid Background="#00000000" Margin="0,0,0,-10" HorizontalAlignment="Left" Width="788">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="Cgrid" AutoGenerateColumns="False" Margin="0,0,230,10" Loaded="Window_Loaded">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding CustomerId}" Header="CustomerId" />
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"  />
+                            <DataGridTextColumn Binding="{Binding Phone}" Header="Phone" />
+                            <DataGridTextColumn Binding="{Binding Email}" Header="Email" />
+                            <DataGridTextColumn Binding="{Binding HasVIPStatus}" Header="HasVIPStatus" />
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="563,156,0,0" VerticalAlignment="Top" Height="22" Width="65" Click="Add_Click_Customers"/>
+                    <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="703,156,0,0" VerticalAlignment="Top" Height="22" Width="65" Click="Update_Click_Customers"/>
+                    <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="633,156,0,0" VerticalAlignment="Top" Height="22" Width="64" Click="Delete_Click_Customers"/>
+                    <TextBox x:Name="CompPhone" HorizontalAlignment="Left" Margin="644,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="Phone" HorizontalAlignment="Left" Margin="588,70,0,0" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Top"/>
+                    <TextBox x:Name="CompName" HorizontalAlignment="Left" Margin="644,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="CustomerName" HorizontalAlignment="Left" Margin="589,43,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
+                    <TextBox x:Name="ComEmail" HorizontalAlignment="Left" Margin="644,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="Email" HorizontalAlignment="Left" Margin="591,97,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="VIPStatus" Margin="644,123,24,210" SelectedIndex="0">
+                        <ComboBoxItem Content="False" />
+                        <ComboBoxItem Content="True" IsSelected="{Binding VIP}" />
+                    </ComboBox>
+                    <TextBlock x:Name="VipStatus" HorizontalAlignment="Left" Margin="580,125,0,0" TextWrapping="Wrap" Text="VipStatus" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="CustomerId" HorizontalAlignment="Left" Margin="571,16,0,0" TextWrapping="Wrap" Text="CustomerId" VerticalAlignment="Top"/>
+                    <TextBox x:Name="CustID" HorizontalAlignment="Left" Margin="644,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+                </Grid>
+
+            </dx:DXTabItem>
+            <dx:DXTabItem x:Name="EmpTab" Header="Employees" Margin="248,0,-514,0" HorizontalContentAlignment="Center" Height="23" VerticalAlignment="Center">
+                <Grid Background="#00000000">
+                    <DataGrid x:Name="Egrid" AutoGenerateColumns="False" Margin="0,0,244,10" Loaded="Window_Loaded">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding EmployeeId}" Header="EmployeeId" />
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name"  />
+                            <DataGridTextColumn Binding="{Binding Title}" Header="Title" />
+                            <DataGridTextColumn Binding="{Binding Country}" Header="Country" />
+                            <DataGridTextColumn Binding="{Binding IsWorkingRemotely}" Header="IsWorkingRemotely" />
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="AddEmployee" Content="Add" HorizontalAlignment="Left" Margin="563,156,0,0" VerticalAlignment="Top" Height="22" Width="65" Click="Add_Click_Employee"/>
+                    <Button x:Name="UpdateEmployee" Content="Update" HorizontalAlignment="Left" Margin="703,156,0,0" VerticalAlignment="Top" Height="22" Width="65" Click="Update_Click_Employee"/>
+                    <Button x:Name="DeleteEmployee" Content="Delete" HorizontalAlignment="Left" Margin="633,156,0,0" VerticalAlignment="Top" Height="22" Width="64" Click="Delete_Click_Employee"/>
+                    <TextBox x:Name="EmpTitle" HorizontalAlignment="Left" Margin="644,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="Title" HorizontalAlignment="Left" Margin="581,70,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top"/>
+                    <TextBox x:Name="EmpName" HorizontalAlignment="Left" Margin="644,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="EmployeeName" HorizontalAlignment="Left" Margin="580,43,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
+                    <TextBox x:Name="EmpCo" HorizontalAlignment="Left" Margin="644,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="Country" HorizontalAlignment="Left" Margin="571,97,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="IWR" Margin="644,123,12,199" SelectedIndex="0">
+                        <ComboBoxItem Content="False" />
+                        <ComboBoxItem Content="True" IsSelected="{Binding IsWorkingRemotely}" />
+                    </ComboBox>
+                    <TextBlock x:Name="IsWorkingRemotely" HorizontalAlignment="Left" Margin="537,125,0,0" TextWrapping="Wrap" Text="IsWorkingRemotely" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="EmployeeId" HorizontalAlignment="Left" Margin="561,16,0,0" TextWrapping="Wrap" Text="EmployeeId" VerticalAlignment="Top"/>
+                    <TextBox x:Name="EmploId" HorizontalAlignment="Left" Margin="644,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+                </Grid>
+
+            </dx:DXTabItem>
+            <dx:DXTabItem x:Name="OrdTab" Header="Orders" HorizontalContentAlignment="Center" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="280" Margin="514,0,0,0">
+                <Grid Background="#00000000">
+                    <DataGrid x:Name="Ogrid" AutoGenerateColumns="False" Margin="0,0,277,10" Loaded="Window_Loaded">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OrderId}" Header="OrderId" />
+                            <DataGridTextColumn Binding="{Binding CustomerOrderNumber}" Header="CustomerOrderNumber"  />
+                            <DataGridTextColumn Binding="{Binding AssignedEmployee}" Header="AssignedEmployee" />
+                            <DataGridTextColumn Binding="{Binding OrderAmount}" Header="OrderAmount" />
+                            <DataGridTextColumn Binding="{Binding AccountNumber}" Header="AccountNumber" />
+                            <DataGridTextColumn Binding="{Binding TransactionDate}" Header="TransactionDate" />
+                            <DataGridTextColumn Binding="{Binding IsVIPOrder}" Header="IsVIPOrder" />
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="AddOrder" Content="Add" HorizontalAlignment="Left" Margin="560,204,0,0" VerticalAlignment="Top" Height="22" Width="65" Click="Add_Click_Order"/>
+                    <Button x:Name="UpdateOrder" Content="Update" HorizontalAlignment="Left" Margin="700,204,0,0" VerticalAlignment="Top" Height="22" Width="65" Click="Update_Click_Order"/>
+                    <Button x:Name="DeleteOrder" Content="Delete" HorizontalAlignment="Left" Margin="630,204,0,0" VerticalAlignment="Top" Height="22" Width="64" Click="Delete_Click_Order"/>
+                    <TextBox x:Name="AssNum" HorizontalAlignment="Left" Margin="644,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="AssignedEmployee" HorizontalAlignment="Left" Margin="538,70,0,0" TextWrapping="Wrap" Text="AssignedEmployee" VerticalAlignment="Top"/>
+                    <TextBox x:Name="OrdNumber" HorizontalAlignment="Left" Margin="644,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="CustomerOrderNumber" HorizontalAlignment="Left" Margin="513,43,0,0" TextWrapping="Wrap" Text="CustomerOrderNumber" VerticalAlignment="Top"/>
+                    <TextBox x:Name="OrdCur" HorizontalAlignment="Left" Margin="644,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="OrderAmount" HorizontalAlignment="Left" Margin="551,97,0,0" TextWrapping="Wrap" Text="OrderAmount" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="IVO" Margin="644,175,12,147" SelectedIndex="0">
+                        <ComboBoxItem Content="False" />
+                        <ComboBoxItem Content="True" IsSelected="{Binding IsWorkingRemotely}" />
+                    </ComboBox>
+                    <TextBlock x:Name="IsVIPOrder" HorizontalAlignment="Left" Margin="560,178,0,0" TextWrapping="Wrap" Text="IsVIPOrder" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="OrderId" HorizontalAlignment="Left" Margin="567,16,0,0" TextWrapping="Wrap" Text="OrderId" VerticalAlignment="Top"/>
+                    <TextBox x:Name="OrdId" HorizontalAlignment="Left" Margin="644,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="AccNum" HorizontalAlignment="Left" Margin="644,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="AccountNumber" HorizontalAlignment="Left" Margin="544,124,0,0" TextWrapping="Wrap" Text="AccountNumber" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TranDate" HorizontalAlignment="Left" Margin="644,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="TransactionDate" HorizontalAlignment="Left" Margin="546,151,0,0" TextWrapping="Wrap" Text="TransactionDate" VerticalAlignment="Top"/>
+                </Grid>
+            </dx:DXTabItem>
+        </dx:DXTabControl>
+    </Grid>
+</UserControl>

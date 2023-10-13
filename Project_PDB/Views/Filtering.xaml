@@ -1,0 +1,93 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ViewModels="clr-namespace:Project_PDB.ViewModels"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="Project_PDB.Views.Filtering"
+             mc:Ignorable="d" Width="802" Height="399">
+    <UserControl.DataContext>
+        <ViewModels:VM/>
+    </UserControl.DataContext>
+
+    <Grid Background="White" Height="398">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <dx:DXTabControl Width="802" Height="399">
+                <UIElement.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </UIElement.RenderTransform>
+                <dx:DXTabItem Header="Customers" Margin="-3,0,-249,0" HorizontalContentAlignment="Center">
+                    <Grid Background="#00000000">
+                        <dxg:GridControl x:Name="grid" EnableSmartColumnsGeneration="True" RestoreStateKeyFieldName="CustomerId" RestoreStateOnSourceChange="True" ItemsSource="{Binding ItemsSource5}">
+                            <dxg:GridControl.TotalSummary>
+                                <dxg:GridSummaryItem Alignment="Right" SummaryType="Count"/>
+                            </dxg:GridControl.TotalSummary>
+                            <dxg:GridControl.InputBindings>
+                                <KeyBinding Command="{Binding View.Commands.DeleteFocusedRow, ElementName=grid}" Key="Delete"/>
+                                <KeyBinding Command="{Binding View.Commands.DeleteFocusedRow, ElementName=grid}" Key="Delete"/>
+                            </dxg:GridControl.InputBindings>
+                            <dxg:GridControl.View>
+                                <dxg:TableView DataSourceRefresh="OnDataSourceRefresh" ShowFixedTotalSummary="True" Margin="0,0,0,2" AllowEditing="False" ShowUpdateRowButtons="OnCellEditorOpen" ValidateRowCommand="{Binding ValidateRow2Command}" ValidateRowDeletionCommand="{Binding ValidateRowDeletion2Command}" DataSourceRefreshCommand="{Binding DataSourceRefresh5Command}"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="CustomerId" IsSmart="True" ReadOnly="True"/>
+                            <dxg:GridColumn FieldName="Name" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="Phone" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="Email" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="HasVIPStatus" IsSmart="True"/>
+                        </dxg:GridControl>
+                    </Grid>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="Employees" Margin="248,0,-514,0" HorizontalContentAlignment="Center" Height="23" VerticalAlignment="Center">
+                    <Grid Background="#00000000">
+                        <dxg:GridControl x:Name="grid1" EnableSmartColumnsGeneration="True" RestoreStateKeyFieldName="EmployeeId" RestoreStateOnSourceChange="True" ItemsSource="{Binding ItemsSource1}">
+                            <dxg:GridControl.TotalSummary>
+                                <dxg:GridSummaryItem Alignment="Right" SummaryType="Count"/>
+                            </dxg:GridControl.TotalSummary>
+                            <dxg:GridControl.InputBindings>
+                                <KeyBinding Command="{Binding View.Commands.DeleteFocusedRow, ElementName=grid1}" Key="Delete"/>
+                            </dxg:GridControl.InputBindings>
+                            <dxg:GridControl.View>
+                                <dxg:TableView AllowEditing="False" ShowUpdateRowButtons="OnCellEditorOpen" ShowFixedTotalSummary="True" DataSourceRefresh="OnDataSourceRefresh" ValidateRowCommand="{Binding ValidateRow1Command}" ValidateRowDeletionCommand="{Binding ValidateRowDeletion1Command}" DataSourceRefreshCommand="{Binding DataSourceRefresh1Command}"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="EmployeeId" IsSmart="True" ReadOnly="True"/>
+                            <dxg:GridColumn FieldName="Name" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="Title" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="Country" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="IsWorkingRemotely" IsSmart="True"/>
+                        </dxg:GridControl>
+                    </Grid>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="Orders" HorizontalContentAlignment="Center" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="280" Margin="514,0,0,0">
+                    <Grid Background="#00000000">
+                        <dxg:GridControl x:Name="grid2" EnableSmartColumnsGeneration="True" RestoreStateKeyFieldName="OrderId" RestoreStateOnSourceChange="True" ItemsSource="{Binding ItemsSource6}">
+                            <dxg:GridControl.TotalSummary>
+                                <dxg:GridSummaryItem Alignment="Right" SummaryType="Count"/>
+                            </dxg:GridControl.TotalSummary>
+                            <dxg:GridControl.InputBindings>
+                                <KeyBinding Command="{Binding View.Commands.DeleteFocusedRow, ElementName=grid2}" Key="Delete"/>
+                                <KeyBinding Command="{Binding View.Commands.DeleteFocusedRow, ElementName=grid2}" Key="Delete"/>
+                                <KeyBinding Command="{Binding View.Commands.DeleteFocusedRow, ElementName=grid2}" Key="Delete"/>
+                                <KeyBinding Command="{Binding View.Commands.DeleteFocusedRow, ElementName=grid2}" Key="Delete"/>
+                            </dxg:GridControl.InputBindings>
+                            <dxg:GridControl.View>
+                                <dxg:TableView ShowUpdateRowButtons="OnCellEditorOpen" ShowFixedTotalSummary="True" DataSourceRefresh="OnDataSourceRefresh" AllowEditing="False" ValidateRowCommand="{Binding ValidateRow3Command}" ValidateRowDeletionCommand="{Binding ValidateRowDeletion3Command}" DataSourceRefreshCommand="{Binding DataSourceRefresh6Command}"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="OrderId" IsSmart="True" ReadOnly="True"/>
+                            <dxg:GridColumn FieldName="CustomerOrderNumber" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="AssignedEmployee" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="OrderAmount" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="AccountNumber" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="TransactionDate" IsSmart="True"/>
+                            <dxg:GridColumn FieldName="IsVIPOrder" IsSmart="True"/>
+                        </dxg:GridControl>
+                    </Grid>
+                </dx:DXTabItem>
+            </dx:DXTabControl>
+        </StackPanel>
+    </Grid>
+</UserControl>

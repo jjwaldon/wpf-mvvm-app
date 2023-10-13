@@ -23,7 +23,7 @@ WPF application is designed using the MVVM architecture, providing a structured 
 
 Application's primary objective is to perform CRUD operations on a connected Microsoft SQL Server database named "Shop," containing tables for Customers, Orders, and Employees.
 
-![1](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/46d44a56-8d0c-47d7-9ee6-a0483d106c08)
+![1](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/89728316-340f-45d3-8c83-c8b8863cdb82)
 
 
 ## Setup and Configuration
@@ -60,11 +60,11 @@ Ensure you have the following prerequisites installed on your development machin
 
 - Use the application interface to create, read, update, and delete records from the Customers, Orders, and Employees tables in the connected "Shop" database, you can additionally filter the data.
 
-![2](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/62029384-3569-4475-a1f0-1dbf2e3eb6c7)
+![2](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/c16b8c68-2504-42b8-942e-4414d5640d63)
 
-![3](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/f04cddfb-91c4-454d-8396-7f7900abb632)
+![3](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/47168361-43f2-444b-9bbe-7135c06e55ce)
 
-![4](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/504c6290-e818-4817-8c36-0ce84c0a2b7b)
+![4](https://github.com/jjwaldon/wpf-mvvm-app/assets/147337604/cbdd651f-664e-409c-80d0-e4697cc88797)
 
 
 ## Dependencies
